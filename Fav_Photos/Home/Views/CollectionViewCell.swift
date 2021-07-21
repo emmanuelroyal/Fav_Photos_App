@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Kingfisher
+
     protocol collectionViewCellDelegate: AnyObject {
         func didTapRemoveBtn(with index: Int)
     }
@@ -22,7 +24,7 @@ import UIKit
             
         
         func setup(with Model: HomeModel) {
-            Model.image.kf.setImage(with: image)
-            catName.text = cat.name
-            self.catModels = cat
+            self.PhotoImage.kf.setImage(with: Model.image.asUrl)
+            self.Name.text = Model.name
+            self.Date.text = Model.date
         }}

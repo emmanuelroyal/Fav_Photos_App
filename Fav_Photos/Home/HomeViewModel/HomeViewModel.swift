@@ -7,7 +7,10 @@
 
 import Foundation
 class CollectionViewModel {
-
+var data = [HomeModel]()
+    
+    
+    
     var completion: (()-> Void)?
     
     func delete(index: Int) {
