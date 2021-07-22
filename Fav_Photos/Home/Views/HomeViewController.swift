@@ -6,13 +6,25 @@
 //
 
 import UIKit
+import Kingfisher
 
 class HomeViewController: UIViewController, UICollectionViewDataSource {
-        @IBOutlet weak var Collection: UICollectionView!
+    @IBOutlet weak var userPhoto: UIImageView!
+    @IBOutlet weak var welcomeLabel: UILabel!
+    @IBOutlet weak var userImage: UIImageView!
+    @IBOutlet weak var Collection: UICollectionView!
     var viewModel = CollectionViewModel()
         override func viewDidLoad() {
             super.viewDidLoad()
+            viewModel.getUserPhoto()
+            viewModel.getUserName()
             Collection.dataSource = self
+            viewModel.usernameHandler = { [weak self] in
+                self?.welcomeLabel.text = self?.viewModel.greetings
+                self?.welcomeLabel.font = UIFont(name: "Helvetica", size: 20.0)
+                self?.welcomeLabel.font = UIFont.boldSystemFont(ofSize: 20.0)
+                self?.userPhoto.kf.setImage(with: self?.viewModel.photo.asUrl)
+            }
         }
         
         override func viewWillAppear(_ animated: Bool) {

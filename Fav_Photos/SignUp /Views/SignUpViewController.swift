@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import Firebase
+import FirebaseFirestore
 import FirebaseAuth
 import GoogleSignIn
 import FBSDKLoginKit

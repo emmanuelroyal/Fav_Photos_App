@@ -6,10 +6,11 @@
 //
 
 import UIKit
-import Firebase
+import FirebaseFirestore
 import FirebaseAuth
 import GoogleSignIn
 import FBSDKLoginKit
+import FirebaseCore
 
 extension UIViewController {
     
