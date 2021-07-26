@@ -28,7 +28,7 @@ class WelcomePageViewController: UIViewController, LoginButtonDelegate {
     
     @IBAction func signInClicked(_ sender: Any) {
     
-        guard let newViewController = storyboard?.instantiateViewController(identifier: "Login") as? LoginViewController   else {
+        guard let newViewController = storyboard?.instantiateViewController(identifier: "LoginStoryBoard") as? LoginViewController   else {
             return
         }
         navigationController?.pushViewController(newViewController, animated: true)

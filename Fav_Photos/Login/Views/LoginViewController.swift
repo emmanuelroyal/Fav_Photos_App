@@ -11,7 +11,7 @@ import FBSDKLoginKit
 class LoginViewController: UIViewController, LoginButtonDelegate {
     
     
-    @IBOutlet weak var fbSignIn: FBLoginButton!
+    @IBOutlet weak var fbSignIN: FBLoginButton!
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var PasswordTextField: UITextField!
     @IBOutlet weak var SecureButton: UIButton!
@@ -21,11 +21,11 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavBar()
-        fbSignIn.delegate = self
+        fbSignIN.delegate = self
         if let token = AccessToken.current,
            !token.isExpired {
         }
-        else { fbSignIn.permissions = ["public_profile", "email"]
+        else { fbSignIN.permissions = ["public_profile", "email"]
         }
     }
     

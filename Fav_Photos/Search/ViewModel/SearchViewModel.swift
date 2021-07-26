@@ -9,11 +9,48 @@ import Foundation
 
 class SearchViewModel {
     
-    
-    var datas:[SearchModel] = [SearchModel(name: "PAUL", image: "https://picscelb.files.wordpress.com/2012/05/miley-cyrus-in-tight-jeans-at-her-boyfriends-house-in-los-angeles-pictures-photoshoot-2012-miley-cyrus-pics-imaes-8.jpg?w=550", date: "SAUL"), SearchModel(name: "hihhik", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTil0cC9-LbGf1HXlNow3q6s4ZnVt_qT5CGQ&usqp=CAU", date: "piihib"), SearchModel(name: "jhjbkb", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQnHnJ75_WfmUzDtfL5uX2QMsmnZlNcjmhYQ&usqp=CAU", date: "hkjbbj"), SearchModel(name: "PAUL", image: "https://picscelb.files.wordpress.com/2012/05/miley-cyrus-in-tight-jeans-at-her-boyfriends-house-in-los-angeles-pictures-photoshoot-2012-miley-cyrus-pics-imaes-8.jpg?w=550", date: "SAUL"),SearchModel(name: "hihhik", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTil0cC9-LbGf1HXlNow3q6s4ZnVt_qT5CGQ&usqp=CAU", date: "piihib"), SearchModel(name: "jhjbkb", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQnHnJ75_WfmUzDtfL5uX2QMsmnZlNcjmhYQ&usqp=CAU", date: "hkjbbj"), SearchModel(name: "PAUL", image: "https://picscelb.files.wordpress.com/2012/05/miley-cyrus-in-tight-jeans-at-her-boyfriends-house-in-los-angeles-pictures-photoshoot-2012-miley-cyrus-pics-imaes-8.jpg?w=550", date: "SAUL"), SearchModel(name: "hihhik", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTil0cC9-LbGf1HXlNow3q6s4ZnVt_qT5CGQ&usqp=CAU", date: "piihib"), SearchModel(name: "jhjbkb", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQnHnJ75_WfmUzDtfL5uX2QMsmnZlNcjmhYQ&usqp=CAU", date: "hkjbbj"), SearchModel(name: "hfgdf", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQnHnJ75_WfmUzDtfL5uX2QMsmnZlNcjmhYQ&usqp=CAU", date: "tgrfedvf")]
+    var filteredData = [SearchModel]()
+    var datas = [SearchModel]()
     var completion: (()-> Void)?
+    var notifyCompletion: (() -> Void)?
     
     func delete(index: Int) {
         completion?()
     }
+    func get() {
+        self.datas.removeAll()
+        let getImages = HomeImagesService()
+        getImages.getImages {(result) in
+            switch result {
+            case .failure(let error):
+                debugPrint(error)
+            case .success(let result):
+                result?.documents.forEach({ (doc) in
+                    let data = doc.data()
+                    if let image = data["imageUrl"] as? String, let date = data["date"] as? String{
+                        let image = SearchModel(name: "Memory", image: image, date: date)
+                        self.datas.append(image)
+                    }
+                })
+                self.notifyCompletion?()
+                self.filteredData = self.datas
+            }
+        }
+    }
+    func filterBySearchtext(searchText: String) {
+        filteredData = []
+        if searchText == "" {
+            filteredData = datas
+        }
+        
+        for imageSearched in datas {
+            let searchByDate = imageSearched.date.lowercased()
+            let searchByName = imageSearched.name.lowercased()
+            if searchByName.contains(searchText.lowercased()) || searchByDate.contains(searchText.lowercased()) {
+                filteredData.append(imageSearched)
+            }
+        }
+        self.notifyCompletion?()
+    }
+    
 }

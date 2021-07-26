@@ -17,12 +17,14 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView.dataSource = self
         setNavBar()
         pageControl.numberOfPages = viewModel.slides.count
         viewModel.updateButton = { [weak self] title, currentPage, btnTitle in
             self?.pageControl.currentPage = currentPage
             self?.nextButton.setTitle(title, for: .normal)
             self?.skip.setTitle(btnTitle, for: .normal)
+           
         }
     }
 

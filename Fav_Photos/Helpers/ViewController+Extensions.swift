@@ -43,7 +43,7 @@ extension UIViewController {
     navigationController?.pushViewController(newViewController, animated: true)
 }
     func navigateToRecoverPassword() {
-    guard let newViewController = storyboard?.instantiateViewController(identifier: "RecoverPassword") as?  RecoverPasswordViewController   else {
+    guard let newViewController = storyboard?.instantiateViewController(identifier: "RecoverPasswordStoryBoard") as?  RecoverPasswordViewController   else {
     return
 }
 navigationController?.pushViewController(newViewController, animated: true)

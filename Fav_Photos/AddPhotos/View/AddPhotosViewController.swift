@@ -36,7 +36,7 @@ class AddPhotosViewController: UIViewController {
     }
     
     @IBAction func cancelTapped(_ sender: Any) {
-        
+        self.image.image = UIImage(systemName: "photo.on.rectangle")
     }
     
     @IBAction func uploadTapped(_ sender: Any) {

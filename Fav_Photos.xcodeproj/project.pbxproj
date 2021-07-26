@@ -17,6 +17,8 @@
 		18B8B73F26A4509A0007CB20 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B8B73E26A4509A0007CB20 /* OnboardingCollectionViewCell.swift */; };
 		18B8B74126A453CA0007CB20 /* OnboardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B8B74026A453CA0007CB20 /* OnboardingModel.swift */; };
 		18B8B74326A4557D0007CB20 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B8B74226A4557D0007CB20 /* ViewModel.swift */; };
+		18C4D1B726AADFFF001A7F32 /* HomeImagesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C4D1B626AADFFF001A7F32 /* HomeImagesApi.swift */; };
+		18C4D1B926AAE056001A7F32 /* HomeImagesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C4D1B826AAE056001A7F32 /* HomeImagesService.swift */; };
 		18E73B7D26A5C12A0034E4DE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E73B7C26A5C12A0034E4DE /* LoginViewController.swift */; };
 		18E73B7F26A5C1460034E4DE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E73B7E26A5C1460034E4DE /* LoginViewModel.swift */; };
 		18E73B8526A5C5B80034E4DE /* FirebaseInstallations in Frameworks */ = {isa = PBXBuildFile; productRef = 18E73B8426A5C5B80034E4DE /* FirebaseInstallations */; };
@@ -93,6 +95,8 @@
 		18B8B73E26A4509A0007CB20 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		18B8B74026A453CA0007CB20 /* OnboardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModel.swift; sourceTree = "<group>"; };
 		18B8B74226A4557D0007CB20 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		18C4D1B626AADFFF001A7F32 /* HomeImagesApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeImagesApi.swift; sourceTree = "<group>"; };
+		18C4D1B826AAE056001A7F32 /* HomeImagesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeImagesService.swift; sourceTree = "<group>"; };
 		18E73B7C26A5C12A0034E4DE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		18E73B7E26A5C1460034E4DE /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		18E73BA026A5C6370034E4DE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -418,6 +422,8 @@
 				18E73BCC26A6284B0034E4DE /* ProfileApi.swift */,
 				18E73BCE26A628840034E4DE /* ProfileService.swift */,
 				18E73BD026A629F40034E4DE /* ProfileViewModel.swift */,
+				18C4D1B626AADFFF001A7F32 /* HomeImagesApi.swift */,
+				18C4D1B826AAE056001A7F32 /* HomeImagesService.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -732,7 +738,9 @@
 				18E73C0926A796590034E4DE /* HomeModel.swift in Sources */,
 				18E73C2326A797B90034E4DE /* ProfileModel.swift in Sources */,
 				18E73BC026A625390034E4DE /* Tasks.swift in Sources */,
+				18C4D1B926AAE056001A7F32 /* HomeImagesService.swift in Sources */,
 				18E73C0526A796210034E4DE /* CollectionViewCell.swift in Sources */,
+				18C4D1B726AADFFF001A7F32 /* HomeImagesApi.swift in Sources */,
 				18E73C0D26A796940034E4DE /* SearchViewController.swift in Sources */,
 				18E73BA926A5CDAA0034E4DE /* WelcomePageViewController.swift in Sources */,
 				18E73BCD26A6284B0034E4DE /* ProfileApi.swift in Sources */,

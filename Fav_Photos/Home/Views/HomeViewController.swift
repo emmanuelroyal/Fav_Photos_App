@@ -11,11 +11,11 @@ import Kingfisher
 class HomeViewController: UIViewController, UICollectionViewDataSource {
     @IBOutlet weak var userPhoto: UIImageView!
     @IBOutlet weak var welcomeLabel: UILabel!
-    @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var Collection: UICollectionView!
     var viewModel = CollectionViewModel()
         override func viewDidLoad() {
             super.viewDidLoad()
+            viewModel.get()
             viewModel.getUserPhoto()
             viewModel.getUserName()
             Collection.dataSource = self
@@ -24,6 +24,11 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
                 self?.welcomeLabel.font = UIFont(name: "Helvetica", size: 20.0)
                 self?.welcomeLabel.font = UIFont.boldSystemFont(ofSize: 20.0)
                 self?.userPhoto.kf.setImage(with: self?.viewModel.photo.asUrl)
+            }
+            viewModel.notifyCompletion = { [weak self] in
+                DispatchQueue.main.async {
+                    self?.Collection.reloadData()
+                }
             }
         }
         

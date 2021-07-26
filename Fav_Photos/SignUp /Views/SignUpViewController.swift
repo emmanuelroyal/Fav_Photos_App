@@ -13,12 +13,12 @@ import FBSDKLoginKit
 
 class SignUpViewController: UIViewController {
     
-    @IBOutlet weak var fbSignIn: FBLoginButton!
+
     @IBOutlet weak var FullNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var SecureButton: UIButton!
-    
+    @IBOutlet weak var fbSignIn: FBLoginButton!
     
     var viewModel = SignupViewModel()
     override func viewDidLoad() {
@@ -50,7 +50,7 @@ class SignUpViewController: UIViewController {
                     } else {
                         let docId = Auth.auth().currentUser?.uid
                         Firestore.firestore().collection("users").document(docId!).setData(
-                            ["email": email, "fullName": fullName]) { (error) in
+                            ["email": email, "fullName": fullName, "photo": "" ]) { (error) in
                             if error != nil {
                                 HUD.hide()
                                 self.showAlert(alertText: "Error",
@@ -77,17 +77,9 @@ class SignUpViewController: UIViewController {
         }
     }
     
-    @IBAction func termsOfServicePressed(_ sender: Any) {
-    }
-    @IBAction func privacyPolicePressed(_ sender: Any) {
-    }
     
     @IBAction func googleIconPressed(_ sender: Any) {
         googleSignIn(inView: self)
-    }
-    
-    @IBAction func appleIconPressed(_ sender: Any) {
-        
     }
     
     @IBAction func facebookIconPressed(_ sender: Any) {
