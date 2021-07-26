@@ -60,6 +60,16 @@ class AlertController {
         inViewController.present(alert, animated: true, completion: nil)
     }
 }
+class AlertService {
+    static func showAlert(_ inViewController: UIViewController, style: UIAlertController.Style, title: String?, message: String?, actions: [UIAlertAction] = [UIAlertAction(title: "Ok", style: .cancel, handler: nil)], completion: (() -> Swift.Void)? = nil) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: style)
+        for action in actions {
+            alert.addAction(action)
+        }
+        inViewController.present(alert, animated: true, completion: nil)
+    }
+    
+}
 
 func googleSignIn(inView: UIViewController) {
     guard let clientID = FirebaseApp.app()?.options.clientID else { return }
@@ -241,7 +251,7 @@ Auth.auth().signIn(with: credential) { authResult, error in
     HUD.show(status: "Signing you In")
     let docId = Auth.auth().currentUser?.uid
     Firestore.firestore().collection("users").document(docId!).setData(
-        ["email": email, "fullName": fullname, "photo": image?.absoluteString ]) { (error) in
+        ["email": email as Any, "fullName": fullname as Any, "photo": image?.absoluteString as Any ]) { (error) in
         if error != nil {
             HUD.hide()
             inView.showAlert(alertText: "Error",

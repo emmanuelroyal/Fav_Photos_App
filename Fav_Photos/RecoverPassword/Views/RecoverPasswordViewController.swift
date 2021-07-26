@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class RecoverPasswordViewController: UIViewController {
 
@@ -17,14 +18,15 @@ setNavBar()
     }
     
     @IBAction func recoverPressed(_ sender: Any) {
-        let newStoryboard = UIStoryboard(name: "LoginStoryBoard", bundle: nil)
-        let newController = newStoryboard
-            .instantiateViewController(identifier: "LoginStoryBoard") as LoginViewController
-        newController.modalTransitionStyle = .crossDissolve
-        newController.modalPresentationStyle = .fullScreen
-        present(newController, animated: true, completion: nil)
+        if emailTextField.text != nil {
+        Auth.auth().sendPasswordReset(withEmail: emailTextField.text!) { error in
+            if error != nil {
+                debugPrint(error?.localizedDescription as Any)
+            }
+        }
     }
     
     
 
+}
 }

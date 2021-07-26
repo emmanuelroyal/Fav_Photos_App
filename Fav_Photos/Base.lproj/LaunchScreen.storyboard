@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,64 +13,61 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IYk-de-RL5">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="630"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="508"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="images (2)" translatesAutoresizingMaskIntoConstraints="NO" id="hPG-7z-2iY">
-                                        <rect key="frame" x="68.5" y="142" width="284" height="286"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fav_Photos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="33N-AJ-PYG">
+                                        <rect key="frame" x="39" y="388" width="342" height="77.333333333333314"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="71"/>
+                                        <color key="textColor" systemColor="systemIndigoColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Untitled design (7)" translatesAutoresizingMaskIntoConstraints="NO" id="hPG-7z-2iY">
+                                        <rect key="frame" x="68" y="64" width="284" height="286"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="284" id="Ozx-pZ-4zH"/>
                                             <constraint firstAttribute="height" constant="286" id="U41-qg-Dtd"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fav_Photos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="33N-AJ-PYG">
-                                        <rect key="frame" x="39" y="483" width="343" height="80"/>
-                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="73"/>
-                                        <color key="textColor" systemColor="systemIndigoColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemTealColor"/>
                                 <constraints>
-                                    <constraint firstItem="33N-AJ-PYG" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="IYk-de-RL5" secondAttribute="leading" constant="20" symbolic="YES" id="MsU-SO-Vgn"/>
-                                    <constraint firstItem="33N-AJ-PYG" firstAttribute="top" secondItem="hPG-7z-2iY" secondAttribute="bottom" constant="55" id="MyF-Tw-mZj"/>
-                                    <constraint firstItem="33N-AJ-PYG" firstAttribute="top" secondItem="hPG-7z-2iY" secondAttribute="bottom" constant="55" id="QdM-jv-gfW"/>
-                                    <constraint firstAttribute="trailing" secondItem="33N-AJ-PYG" secondAttribute="trailing" constant="32" id="jCx-oT-RaW"/>
-                                    <constraint firstAttribute="bottom" secondItem="33N-AJ-PYG" secondAttribute="bottom" constant="67" id="jQf-4z-Kgm"/>
-                                    <constraint firstItem="hPG-7z-2iY" firstAttribute="centerX" secondItem="IYk-de-RL5" secondAttribute="centerX" constant="3.5" id="k74-tL-ju5"/>
-                                    <constraint firstItem="hPG-7z-2iY" firstAttribute="top" secondItem="IYk-de-RL5" secondAttribute="top" constant="142" id="r1X-14-Bcj"/>
-                                    <constraint firstItem="hPG-7z-2iY" firstAttribute="top" secondItem="IYk-de-RL5" secondAttribute="top" constant="142" id="rbo-hw-tt5"/>
+                                    <constraint firstItem="33N-AJ-PYG" firstAttribute="leading" secondItem="IYk-de-RL5" secondAttribute="leading" constant="39" id="1xX-1G-uyo"/>
+                                    <constraint firstItem="33N-AJ-PYG" firstAttribute="centerX" secondItem="hPG-7z-2iY" secondAttribute="centerX" id="5NC-Sa-jpf"/>
+                                    <constraint firstItem="hPG-7z-2iY" firstAttribute="leading" secondItem="IYk-de-RL5" secondAttribute="leading" constant="68" id="677-t6-7PN"/>
+                                    <constraint firstItem="33N-AJ-PYG" firstAttribute="top" secondItem="hPG-7z-2iY" secondAttribute="bottom" constant="38" id="Bo3-hO-qkw"/>
+                                    <constraint firstItem="hPG-7z-2iY" firstAttribute="top" secondItem="IYk-de-RL5" secondAttribute="top" constant="64" id="LdO-WG-6u8"/>
+                                    <constraint firstAttribute="trailing" secondItem="hPG-7z-2iY" secondAttribute="trailing" constant="62" id="nVZ-dW-2nz"/>
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="baU-n2-d7k">
-                                <rect key="frame" x="-11" y="627" width="425" height="269"/>
+                                <rect key="frame" x="0.0" y="463" width="414" height="273"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="baU-n2-d7k" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="583" id="52m-qp-6Oe"/>
-                            <constraint firstItem="IYk-de-RL5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Asg-s8-4tW"/>
-                            <constraint firstItem="baU-n2-d7k" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Q7c-mQ-24R"/>
-                            <constraint firstAttribute="bottom" secondItem="baU-n2-d7k" secondAttribute="bottom" id="YHf-Rg-ccM"/>
-                            <constraint firstItem="IYk-de-RL5" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="iFg-1p-BbR"/>
-                            <constraint firstItem="baU-n2-d7k" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="-11" id="mEK-VP-kLI"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IYk-de-RL5" secondAttribute="bottom" constant="232" id="nX4-AQ-DrY"/>
-                            <constraint firstItem="IYk-de-RL5" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="zMj-Gh-ktF"/>
+                            <constraint firstItem="baU-n2-d7k" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="463" id="1Fi-qu-dlD"/>
+                            <constraint firstItem="baU-n2-d7k" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Bqo-Xf-q7H"/>
+                            <constraint firstItem="baU-n2-d7k" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Fhv-5Q-ZYB"/>
+                            <constraint firstItem="IYk-de-RL5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="RLL-5j-0SM"/>
+                            <constraint firstItem="baU-n2-d7k" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="acO-V3-6cq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IYk-de-RL5" secondAttribute="bottom" constant="228" id="h0m-OE-ISV"/>
+                            <constraint firstItem="IYk-de-RL5" firstAttribute="leading" secondItem="baU-n2-d7k" secondAttribute="leading" id="kuu-Si-ofK"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52.173913043478265" y="375"/>
+            <point key="canvasLocation" x="52.173913043478265" y="374.18478260869568"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Untitled design (7)" width="1024" height="1024"/>
         <image name="download" width="275" height="183"/>
-        <image name="images (2)" width="222" height="227"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

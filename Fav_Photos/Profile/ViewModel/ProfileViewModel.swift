@@ -24,29 +24,25 @@ extension ProfileModel: RequestParameter {
 
 class ProfileViewModel {
     var fullName = ""
-    var userAddress = ""
-    var phoneNumber = ""
     var email = ""
+    var photo = ""
     var notificationCompletion: (() -> Void)?
     
     func getProfileDetails() {
-        self.userAddress = ""
-        self.phoneNumber = ""
         self.fullName = ""
+        self.email = ""
+        self.photo = ""
         let docId = Auth.auth().currentUser?.uid
         let docRef = Firestore.firestore().collection("/users").document("\(docId!)")
         docRef.getDocument {(document, error) in
             if let document = document, document.exists {
                 let docData = document.data()
-                let userEmail = docData!["email"] as? String ?? "Email???"
-                let userFullName = docData!["fullName"] as? String ?? "Full name???"
-                let address = docData!["address"] as? String ?? "Edit address"
-                let phoneNumber = docData!["phoneNumber"] as? String ?? "Add Phone Number"
-                self.userAddress.append(address)
-                self.phoneNumber.append(phoneNumber)
-                self.email.append(userEmail)
-                self.fullName.append(userFullName)
-            } else {
+                if let email = docData!["email"] as? String, let userName = docData!["fullName"] as? String, let userPhoto = docData!["photo"] as? String {
+                self.email.append(email)
+                    self.fullName.append(userName)
+                    self.photo.append(userPhoto)
+            }
+            }else {
                 print( error?.localizedDescription as Any )
             }
             self.notificationCompletion?()
@@ -54,17 +50,17 @@ class ProfileViewModel {
     }
     
     func updateProfile(view: UIViewController,
-                       _ email: String, _ fullName: String, _ address: String, _ phoneNumber: String) {
+                       _ image: String) {
         
         let docId = Auth.auth().currentUser?.uid
         Firestore.firestore().collection("users").document(docId!).setData(
-            ["email": email, "fullName": fullName, "address": address, "phoneNumber": phoneNumber]) { (error) in
+            ["photo": image]) { (error) in
             if error != nil {
                 AlertController.showAlert(view,
                                           title: "Error",
-                                          message: "There was an error saving your profile. Please try again.")
+                                          message: "There was an error saving your profile picture. Please try again.")
             } else {
-                AlertController.showAlert(view, title: "Done", message: "Profile updated successfully!")
+                AlertController.showAlert(view, title: "Done", message: "Profile picture update successful!")
                 
             }
         }

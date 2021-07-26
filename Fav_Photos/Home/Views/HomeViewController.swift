@@ -19,12 +19,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
             viewModel.getUserPhoto()
             viewModel.getUserName()
             Collection.dataSource = self
-            viewModel.usernameHandler = { [weak self] in
-                self?.welcomeLabel.text = self?.viewModel.greetings
-                self?.welcomeLabel.font = UIFont(name: "Helvetica", size: 20.0)
-                self?.welcomeLabel.font = UIFont.boldSystemFont(ofSize: 20.0)
-                self?.userPhoto.kf.setImage(with: self?.viewModel.photo.asUrl)
-            }
             viewModel.notifyCompletion = { [weak self] in
                 DispatchQueue.main.async {
                     self?.Collection.reloadData()
@@ -33,8 +27,13 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
         }
         
         override func viewWillAppear(_ animated: Bool) {
+            viewModel.getUserPhoto()
                 DispatchQueue.main.async {
                     self.Collection.reloadData()
+                    self.viewModel.usernameHandler = { [weak self] in
+                        self?.welcomeLabel.text = self?.viewModel.greetings
+                        self?.userPhoto.kf.setImage(with: self?.viewModel.photo.asUrl)
+                    }
             }
         }
         
