@@ -11,6 +11,9 @@ import FBSDKLoginKit
 class LoginViewController: UIViewController, LoginButtonDelegate {
     
     
+    @IBOutlet weak var signIn: UIButton!
+    @IBOutlet weak var skip: UIView!
+    @IBOutlet weak var socials: UIStackView!
     @IBOutlet weak var fbSignIN: FBLoginButton!
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var PasswordTextField: UITextField!
@@ -27,6 +30,26 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
         }
         else { fbSignIN.permissions = ["public_profile", "email"]
         }
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.skip.center.y -= 10
+        self.signIn.center.y += 15
+        self.socials.center.x -= 10
+        self.signIn.backgroundColor = .systemOrange
+        signIn.alpha = 0.0
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        UIView.animate(withDuration: 1.0 , delay: 0.5,
+        usingSpringWithDamping: 0.5, initialSpringVelocity: 0.0, options: [],
+        animations: { [self] in
+            self.skip.center.y += 10
+          self.signIn.center.y -= 15.0
+          self.signIn.alpha = 1.0
+            self.signIn.backgroundColor = .systemIndigo
+            self.socials.center.x += 7
+        },
+        completion: nil)
     }
     
     @IBAction func SignInPressed(_ sender: Any) {

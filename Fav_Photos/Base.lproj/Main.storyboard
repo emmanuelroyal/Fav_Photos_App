@@ -695,6 +695,9 @@
                         <outlet property="SecureButton" destination="Nhd-jY-9xn" id="hed-KZ-OPS"/>
                         <outlet property="emailTextfield" destination="CYV-63-WGj" id="MKS-r3-6Sc"/>
                         <outlet property="fbSignIN" destination="1Nq-BX-BM7" id="JbZ-0u-2w1"/>
+                        <outlet property="signIn" destination="Mfo-yw-AfQ" id="A5E-0c-zo8"/>
+                        <outlet property="skip" destination="Uoi-Ih-n9R" id="zeo-HG-Xzt"/>
+                        <outlet property="socials" destination="Dub-y2-A1c" id="BHh-Pb-QQH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KCW-zT-M1O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
