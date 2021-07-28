@@ -2739,6 +2739,11 @@
                     </view>
                     <connections>
                         <outlet property="fbSignIn" destination="Zdb-df-uCr" id="8zY-si-ugq"/>
+                        <outlet property="signIN" destination="PEw-ZL-RC8" id="dDP-78-gWn"/>
+                        <outlet property="signUp" destination="fP5-9i-7kC" id="vmL-9v-zdJ"/>
+                        <outlet property="smallLabel" destination="Qg3-Nf-jue" id="oaX-Gj-iW1"/>
+                        <outlet property="socialLogins" destination="23s-ic-M8v" id="HaK-Kt-P7M"/>
+                        <outlet property="welcomeLabel" destination="463-1u-K2W" id="xtN-p0-upQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3zR-1h-PgI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
