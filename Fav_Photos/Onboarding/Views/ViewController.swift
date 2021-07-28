@@ -33,6 +33,24 @@ class ViewController: UIViewController {
            
         }
     }
+    override func viewWillAppear(_ animated: Bool) {
+        self.nextButton.center.y += 5
+        nextButton.alpha = 0.3
+        nextButton.backgroundColor = .systemIndigo
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        UIView.animate(withDuration: 1.0 , delay: 0.5,
+        usingSpringWithDamping: 0.5, initialSpringVelocity: 0.0, options: [],
+        animations: { [self] in
+          self.nextButton.center.y -= 5.0
+          self.nextButton.alpha = 1.0
+            nextButton.backgroundColor = .systemGray6
+            nextButton.layer.cornerRadius = 15
+        },
+        completion: nil)
+    }
+    
 
     @IBAction func skipPressed(_ sender: Any) {
         skippedToWelcomePage()
