@@ -14,17 +14,50 @@ import Kingfisher
 
 class AddPhotosViewController: UIViewController {
     @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var openCamera: UIButton!
     
+    @IBOutlet weak var openPhoto: UIButton!
+    @IBOutlet weak var upload: UIButton!
+    @IBOutlet weak var cancel: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     
     var viewModel = AddPhotosViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavBar()
         activityIndicator.isHidden = true
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.cancel.center.y += 5
+        self.upload.center.y += 5
+        self.openPhoto.center.y += 5
+        self.openCamera.center.y += 10
+        self.openPhoto.alpha = 0.2
+        self.openCamera.alpha = 0.2
+        self.cancel.alpha = 0.3
+        self.upload.alpha = 0.3
+        self.openPhoto.backgroundColor = .systemOrange
+        self.openCamera.backgroundColor = .systemOrange
+    }
 
-        
+    override func viewDidAppear(_ animated: Bool) {
+        UIView.animate(withDuration: 1.0 , delay: 0.5,
+        usingSpringWithDamping: 0.5, initialSpringVelocity: 0.0, options: [],
+        animations: { [self] in
+            self.cancel.center.y -= 5
+            self.upload.center.y -= 5
+            self.openPhoto.center.y -= 5
+            self.openCamera.center.y -= 10
+            self.openPhoto.alpha = 1
+            self.openCamera.alpha = 1
+            self.cancel.alpha = 1
+            self.upload.alpha = 1
+            self.openPhoto.backgroundColor = .systemIndigo
+            self.openCamera.backgroundColor = .systemIndigo
+        },
+        completion: nil)
     }
     
 

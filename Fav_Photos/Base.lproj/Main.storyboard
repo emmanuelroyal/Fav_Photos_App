@@ -138,11 +138,6 @@
                                                                                     <subviews>
                                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beach" translatesAutoresizingMaskIntoConstraints="NO" id="Wqa-xs-2iH">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="333" height="375.33333333333331"/>
-                                                                                            <userDefinedRuntimeAttributes>
-                                                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                                                    <real key="value" value="20"/>
-                                                                                                </userDefinedRuntimeAttribute>
-                                                                                            </userDefinedRuntimeAttributes>
                                                                                         </imageView>
                                                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="860-bY-pfA">
                                                                                             <rect key="frame" x="20" y="405.33333333333331" width="293" height="49.666666666666686"/>
@@ -1895,7 +1890,11 @@
                     <tabBarItem key="tabBarItem" title="" image="plus" catalog="system" selectedImage="camera.on.rectangle.fill" id="oQ0-Im-Nak"/>
                     <connections>
                         <outlet property="activityIndicator" destination="MGZ-v5-ZOE" id="5u9-fX-0dx"/>
+                        <outlet property="cancel" destination="v5n-uz-hnT" id="8ME-Cg-DCl"/>
                         <outlet property="image" destination="Whd-RX-kz1" id="kyx-E9-Zmv"/>
+                        <outlet property="openCamera" destination="aLp-tp-jai" id="VuY-X9-e5i"/>
+                        <outlet property="openPhoto" destination="2Rh-38-Shn" id="7gA-gG-h9w"/>
+                        <outlet property="upload" destination="NEJ-sE-Qeq" id="rb0-yB-u9n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8PL-1T-3OH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1949,23 +1948,7 @@
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6na-wF-Pmh">
                                                                         <rect key="frame" x="0.0" y="323.66666666666674" width="374" height="323.33333333333326"/>
-                                                                        <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="you have not typed in any key word" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdf-yI-Zt6">
-                                                                                <rect key="frame" x="22" y="221.99999999999994" width="332" height="93"/>
-                                                                                <constraints>
-                                                                                    <constraint firstAttribute="height" constant="93" id="S1K-CU-8vO"/>
-                                                                                </constraints>
-                                                                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="29"/>
-                                                                                <color key="textColor" systemColor="systemIndigoColor"/>
-                                                                                <nil key="highlightedColor"/>
-                                                                            </label>
-                                                                        </subviews>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hdf-yI-Zt6" secondAttribute="trailing" constant="20" symbolic="YES" id="S31-sZ-DxO"/>
-                                                                            <constraint firstAttribute="bottom" secondItem="hdf-yI-Zt6" secondAttribute="bottom" constant="8.3333333333332575" id="nAP-sw-fwE"/>
-                                                                            <constraint firstItem="hdf-yI-Zt6" firstAttribute="leading" secondItem="6na-wF-Pmh" secondAttribute="leading" constant="22" id="wuW-wZ-9JZ"/>
-                                                                        </constraints>
                                                                     </view>
                                                                 </subviews>
                                                                 <constraints>
@@ -2045,17 +2028,27 @@
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="you have not typed in any key word" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdf-yI-Zt6">
+                                                <rect key="frame" x="20" y="297" width="374" height="93"/>
+                                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="29"/>
+                                                <color key="textColor" systemColor="systemIndigoColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="xRY-m8-puG" secondAttribute="bottom" constant="21" id="Mf2-4g-EnP"/>
+                                            <constraint firstAttribute="trailing" secondItem="hdf-yI-Zt6" secondAttribute="trailing" constant="20" symbolic="YES" id="Ql6-Jg-gyt"/>
                                             <constraint firstItem="kRK-Nk-8WJ" firstAttribute="top" secondItem="iQL-pw-wy8" secondAttribute="top" constant="10" id="Vh2-Lc-ZJh"/>
                                             <constraint firstAttribute="trailing" secondItem="kRK-Nk-8WJ" secondAttribute="trailing" constant="10" id="WjA-Ax-BHi"/>
                                             <constraint firstItem="xRY-m8-puG" firstAttribute="top" secondItem="iQL-pw-wy8" secondAttribute="top" constant="104" id="X7s-LL-ecW"/>
+                                            <constraint firstAttribute="bottom" secondItem="hdf-yI-Zt6" secondAttribute="bottom" constant="297" id="Yli-e3-fwA"/>
                                             <constraint firstItem="xRY-m8-puG" firstAttribute="leading" secondItem="iQL-pw-wy8" secondAttribute="leading" constant="20" symbolic="YES" id="bV0-NM-Qv5"/>
                                             <constraint firstAttribute="bottom" secondItem="kRK-Nk-8WJ" secondAttribute="bottom" constant="10" id="cXa-CS-LKq"/>
                                             <constraint firstAttribute="trailing" secondItem="xRY-m8-puG" secondAttribute="trailing" constant="20" symbolic="YES" id="dMD-tZ-8Fy"/>
+                                            <constraint firstItem="hdf-yI-Zt6" firstAttribute="leading" secondItem="iQL-pw-wy8" secondAttribute="leading" constant="20" symbolic="YES" id="jUU-Jd-ygE"/>
                                             <constraint firstItem="kRK-Nk-8WJ" firstAttribute="leading" secondItem="iQL-pw-wy8" secondAttribute="leading" constant="10" id="q8D-Pd-UbG"/>
+                                            <constraint firstItem="hdf-yI-Zt6" firstAttribute="top" secondItem="iQL-pw-wy8" secondAttribute="top" constant="297" id="rHW-cY-EVO"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -2444,6 +2437,9 @@
                         <outlet property="emailTextField" destination="Xz9-ph-Pp9" id="A7c-bm-qht"/>
                         <outlet property="fbSignIn" destination="twa-AY-u59" id="PMk-lN-A2X"/>
                         <outlet property="passwordTextField" destination="qY8-3v-gIH" id="YwR-cu-6mg"/>
+                        <outlet property="signUp" destination="1Y2-S7-7MW" id="GZb-8q-bMe"/>
+                        <outlet property="skip" destination="MiP-oB-Fie" id="t2R-w4-aJl"/>
+                        <outlet property="socials" destination="dY7-XL-5Y1" id="ACG-Ri-W8H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BIb-t1-j0l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

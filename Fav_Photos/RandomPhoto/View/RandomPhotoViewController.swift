@@ -27,7 +27,7 @@ class RandomPhotoViewController: UIViewController, UICollectionViewDataSource, U
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
                 self.prompt.isHidden = true
-                self.Search.prompt = "swipe to see more images"
+                self.Search.prompt = "swipe left to see more images"
             }
         }
     }
