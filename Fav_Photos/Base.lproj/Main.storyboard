@@ -19,25 +19,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HYE-c3-Keu">
-                                <rect key="frame" x="0.0" y="44" width="414" height="692"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5k2-2D-4FI">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="692"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iC3-nm-fNM">
-                                                <rect key="frame" x="10" y="10" width="394" height="672"/>
+                                                <rect key="frame" x="10" y="10" width="394" height="716"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qaq-XI-pFt">
-                                                        <rect key="frame" x="0.0" y="0.0" width="394" height="672"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="394" height="716"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="i0i-0W-hpQ">
-                                                                <rect key="frame" x="10" y="10" width="374" height="652"/>
+                                                                <rect key="frame" x="10" y="10" width="374" height="696"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bHL-4q-mMr">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="326"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="348"/>
                                                                         <subviews>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wbg-3b-bve">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="326"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="348"/>
                                                                                 <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                                                                 <userDefinedRuntimeAttributes>
                                                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -54,10 +54,10 @@
                                                                         </constraints>
                                                                     </stackView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7XX-TK-lRA">
-                                                                        <rect key="frame" x="0.0" y="326" width="374" height="326"/>
+                                                                        <rect key="frame" x="0.0" y="348" width="374" height="348"/>
                                                                         <subviews>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NCy-n9-7cj">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="326"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="348"/>
                                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                                 <userDefinedRuntimeAttributes>
                                                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -93,7 +93,7 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ocu-gI-FdT">
-                                                <rect key="frame" x="30" y="30" width="354" height="632"/>
+                                                <rect key="frame" x="30" y="30" width="354" height="676"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="dhs-ba-xK6">
                                                         <rect key="frame" x="0.0" y="0.0" width="354" height="48"/>
@@ -114,13 +114,13 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dz0-jd-Hdy">
-                                                        <rect key="frame" x="0.0" y="65" width="354" height="500"/>
+                                                        <rect key="frame" x="0.0" y="65" width="354" height="544"/>
                                                         <subviews>
                                                             <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="Z6N-90-lKU">
-                                                                <rect key="frame" x="0.0" y="0.0" width="354" height="500"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="354" height="544"/>
                                                                 <subviews>
                                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YEU-mN-bHa">
-                                                                        <rect key="frame" x="10" y="10" width="334" height="480"/>
+                                                                        <rect key="frame" x="10" y="10" width="334" height="524"/>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Hwc-BW-fGe">
                                                                             <size key="itemSize" width="333" height="475"/>
@@ -130,7 +130,7 @@
                                                                         </collectionViewFlowLayout>
                                                                         <cells>
                                                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OnboardingCollectionViewCell" id="dgE-xW-jqQ" customClass="OnboardingCollectionViewCell" customModule="Fav_Photos" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="2.6666666666666665" width="333" height="475"/>
+                                                                                <rect key="frame" x="0.0" y="24.666666666666668" width="333" height="475"/>
                                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Y8Y-6W-auh">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="333" height="475"/>
@@ -138,6 +138,11 @@
                                                                                     <subviews>
                                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beach" translatesAutoresizingMaskIntoConstraints="NO" id="Wqa-xs-2iH">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="333" height="375.33333333333331"/>
+                                                                                            <userDefinedRuntimeAttributes>
+                                                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                                    <real key="value" value="20"/>
+                                                                                                </userDefinedRuntimeAttribute>
+                                                                                            </userDefinedRuntimeAttributes>
                                                                                         </imageView>
                                                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="860-bY-pfA">
                                                                                             <rect key="frame" x="20" y="405.33333333333331" width="293" height="49.666666666666686"/>
@@ -201,7 +206,7 @@
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ib7-ww-khl">
-                                                        <rect key="frame" x="0.0" y="582" width="354" height="50"/>
+                                                        <rect key="frame" x="0.0" y="626" width="354" height="50"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KUq-6l-kqQ">
                                                                 <rect key="frame" x="0.0" y="0.0" width="354" height="50"/>
@@ -3113,10 +3118,10 @@
         <!--Navigation Controller-->
         <scene sceneID="JSb-bi-A9p">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TRu-1q-vld" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="TRu-1q-vld" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="P3r-Jh-QIx">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -3126,7 +3131,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aRE-Rr-rT5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1024.6376811594205" y="-5.3571428571428568"/>
+            <point key="canvasLocation" x="699" y="4"/>
         </scene>
     </scenes>
     <resources>

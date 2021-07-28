@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1807ED4626B1B5120039A37D /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1807ED4526B1B5120039A37D /* IQKeyboardManagerSwift */; };
 		180ED5BD26B069390005F0E9 /* RandomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180ED5BC26B069390005F0E9 /* RandomCollectionViewCell.swift */; };
 		1862596F26B0592000E3ABAB /* UnsplashModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1862596E26B0592000E3ABAB /* UnsplashModel.swift */; };
-		1872560826B040D2003D049C /* ShimmerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1872560726B040D2003D049C /* ShimmerSwift */; };
 		1872560B26B0413E003D049C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1872560A26B0413E003D049C /* Alamofire */; };
 		1872560E26B04DCC003D049C /* UnsplashNetworkCll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1872560D26B04DCC003D049C /* UnsplashNetworkCll.swift */; };
 		18B8B72926A44BD90007CB20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B8B72826A44BD90007CB20 /* AppDelegate.swift */; };
@@ -155,12 +155,12 @@
 				18E73B8926A5C5B80034E4DE /* FirebaseMessaging in Frameworks */,
 				18E73B8726A5C5B80034E4DE /* FirebaseInAppMessagingSwift-Beta in Frameworks */,
 				18E73B9F26A5C5B80034E4DE /* FirebaseRemoteConfig in Frameworks */,
-				1872560826B040D2003D049C /* ShimmerSwift in Frameworks */,
 				1872560B26B0413E003D049C /* Alamofire in Frameworks */,
 				18E73C2626A849A60034E4DE /* Kingfisher in Frameworks */,
 				18E73B8526A5C5B80034E4DE /* FirebaseInstallations in Frameworks */,
 				18E73BDB26A645150034E4DE /* GoogleSignIn in Frameworks */,
 				18E73B8D26A5C5B80034E4DE /* FirebaseStorage in Frameworks */,
+				1807ED4626B1B5120039A37D /* IQKeyboardManagerSwift in Frameworks */,
 				18E73BE226A6F9210034E4DE /* FacebookCore in Frameworks */,
 				18E73B9326A5C5B80034E4DE /* FirebaseFirestore in Frameworks */,
 				18E73B9526A5C5B80034E4DE /* FirebaseDatabase in Frameworks */,
@@ -655,8 +655,8 @@
 				18E73BE326A6F9210034E4DE /* FacebookLogin */,
 				18E73BE626A7612A0034E4DE /* SVProgressHUD */,
 				18E73C2526A849A60034E4DE /* Kingfisher */,
-				1872560726B040D2003D049C /* ShimmerSwift */,
 				1872560A26B0413E003D049C /* Alamofire */,
+				1807ED4526B1B5120039A37D /* IQKeyboardManagerSwift */,
 			);
 			productName = Fav_Photos;
 			productReference = 18B8B72526A44BD90007CB20 /* Fav_Photos.app */;
@@ -691,8 +691,8 @@
 				18E73BDE26A6F9200034E4DE /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
 				18E73BE526A7612A0034E4DE /* XCRemoteSwiftPackageReference "SVProgressHUD" */,
 				18E73C2426A849A40034E4DE /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				1872560626B040D2003D049C /* XCRemoteSwiftPackageReference "ShimmerSwift" */,
 				1872560926B0413E003D049C /* XCRemoteSwiftPackageReference "Alamofire" */,
+				1807ED4426B1B5110039A37D /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = 18B8B72626A44BD90007CB20 /* Products */;
 			projectDirPath = "";
@@ -976,12 +976,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		1872560626B040D2003D049C /* XCRemoteSwiftPackageReference "ShimmerSwift" */ = {
+		1807ED4426B1B5110039A37D /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/BeauNouvelle/ShimmerSwift.git";
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.2.0;
+				minimumVersion = 6.5.6;
 			};
 		};
 		1872560926B0413E003D049C /* XCRemoteSwiftPackageReference "Alamofire" */ = {
@@ -1035,10 +1035,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1872560726B040D2003D049C /* ShimmerSwift */ = {
+		1807ED4526B1B5120039A37D /* IQKeyboardManagerSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1872560626B040D2003D049C /* XCRemoteSwiftPackageReference "ShimmerSwift" */;
-			productName = ShimmerSwift;
+			package = 1807ED4426B1B5110039A37D /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 		1872560A26B0413E003D049C /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
