@@ -12,4 +12,7 @@ struct HomeImagesService {
     func getImages(completion: @escaping NetworkRouterCompletion) {
         router.request(.getImages, completion: completion)
     }
+    func deleteImage(type: String, completion: @escaping NetworkRouterCompletion){
+        router.request(.delete(type: type), completion: completion)
+    }
 }

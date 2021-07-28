@@ -27,6 +27,7 @@ extension UIViewController {
         self.navigationController?.navigationItem.backButtonTitle = " "
         self.navigationController?.view.backgroundColor = .clear
         self.navigationController?.navigationBar.tintColor = .systemBlue
+        self.navigationItem.hidesBackButton = true
     }
     
     

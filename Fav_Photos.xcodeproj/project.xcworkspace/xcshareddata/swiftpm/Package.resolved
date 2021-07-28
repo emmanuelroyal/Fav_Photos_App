@@ -11,6 +11,15 @@
         }
       },
       {
+        "package": "Alamofire",
+        "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
+        "state": {
+          "branch": null,
+          "revision": "f96b619bcb2383b43d898402283924b80e2c4bae",
+          "version": "5.4.3"
+        }
+      },
+      {
         "package": "AppAuth",
         "repositoryURL": "https://github.com/openid/AppAuth-iOS.git",
         "state": {
@@ -143,6 +152,15 @@
           "branch": null,
           "revision": "afa9a1ace74e116848d4f743599ab83e584ff8cb",
           "version": "1.2.12"
+        }
+      },
+      {
+        "package": "ShimmerSwift",
+        "repositoryURL": "https://github.com/BeauNouvelle/ShimmerSwift.git",
+        "state": {
+          "branch": null,
+          "revision": "f1a4366f74329c313e9528bcbe5286eacc750c05",
+          "version": "2.2.0"
         }
       },
       {

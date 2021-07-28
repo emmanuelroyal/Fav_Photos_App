@@ -11,6 +11,7 @@ import FirebaseAuth
 
 enum HomeImagesApi {
     case getImages
+    case delete(type: String)
 }
 
 extension HomeImagesApi: FirestoreRequest {
@@ -18,6 +19,9 @@ extension HomeImagesApi: FirestoreRequest {
     var collectionReference: CollectionReference? {
         switch self {
         case .getImages:
+            guard let userID = Auth.auth().currentUser?.uid else { return nil }
+            return Firestore.firestore().collection(Collection.users.identifier).document("\(userID)").collection(Collection.userPhotos.identifier)
+        case .delete:
             guard let userID = Auth.auth().currentUser?.uid else { return nil }
             return Firestore.firestore().collection(Collection.users.identifier).document("\(userID)").collection(Collection.userPhotos.identifier)
         }
@@ -31,12 +35,17 @@ extension HomeImagesApi: FirestoreRequest {
         switch self {
         case .getImages:
             return .read
+        case .delete(let type):
+            return .delete(type: type)
         }
     }
     var documentReference: DocumentReference? {
         switch self {
         case .getImages:
             return baseCollectionReference
+        case .delete(let type):
+            guard let userID = Auth.auth().currentUser?.uid else { return nil }
+            return Firestore.firestore().collection(Collection.users.identifier).document("\(userID)").collection(Collection.userPhotos.identifier).document(type)
         }
     }
     var collectionReferences: Query? {

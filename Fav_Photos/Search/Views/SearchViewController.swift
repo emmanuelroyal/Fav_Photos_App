@@ -16,6 +16,7 @@ class SearchViewController: UIViewController, UICollectionViewDataSource {
     var viewModel = SearchViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNavBar()
         searchBar.delegate = self
         viewModel.get()
         viewModel.notifyCompletion = { [weak self] in

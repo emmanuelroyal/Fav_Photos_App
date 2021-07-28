@@ -10,7 +10,7 @@ import Foundation
 enum Tasks {
     case read
     case qread(type: String )
-    case delete
+    case delete(type: String)
     case create(documentData: Parameter)
     case update(documentData: Parameter)
 }

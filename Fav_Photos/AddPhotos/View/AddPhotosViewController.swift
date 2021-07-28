@@ -21,6 +21,7 @@ class AddPhotosViewController: UIViewController {
     var viewModel = AddPhotosViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNavBar()
         activityIndicator.isHidden = true
 
         

@@ -25,6 +25,7 @@ class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNavBar()
         viewModel.getProfileDetails()
         activityIndicator.isHidden = false
         
@@ -87,6 +88,7 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        HUD.show(status: "Updating Profile Picture")
         if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
             self.image.image = editedImage.withRenderingMode(.alwaysOriginal)
         } else if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
@@ -94,10 +96,10 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
         }
         guard let image = image.image,
             let data = image.jpegData(compressionQuality: 1.0) else {
+            HUD.hide()
          AlertController.showAlert(self, title: "Error", message: "Something went wrong")
             return
         }
-        HUD.show(status: "Updating Profile Picture")
         let imageName = UUID().uuidString
         
         let imageReference = Storage.storage().reference()
@@ -106,24 +108,29 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
         
         imageReference.putData(data, metadata: nil) { (metadata, err) in
             if let err = err {
+                HUD.hide()
                 AlertController.showAlert(self, title: "Error", message: err.localizedDescription)
                 return
             }
             
             imageReference.downloadURL(completion: { (url, err) in
                 if let err = err {
+                    HUD.hide()
                     AlertController.showAlert(self, title: "Error", message: err.localizedDescription)
                     return
                 }
                 
                 guard let url = url else {
+                    HUD.hide()
                  AlertController.showAlert(self, title: "Error", message: "Something went wrong")
                     return
                 }
+                HUD.hide()
              self.viewModel.updateProfile(view: self, url.absoluteString)
+               
                 })
         }
-        HUD.hide()
+        
    
         dismiss(animated: true, completion: nil)
     }

@@ -7,12 +7,13 @@
 
 import Foundation
 class HomeModel {
-        var name, date, image: String
+        var name, date, imageId, image: String
         
-        init(name: String, image: String, date: String) {
+    init(name: String, image: String, date: String, imageId: String) {
             self.name = name
             self.image = image
             self.date = date
+            self.imageId = imageId
         }
     }
 

@@ -12,18 +12,36 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
     @IBOutlet weak var userPhoto: UIImageView!
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var Collection: UICollectionView!
+    @IBOutlet weak var prompt: UILabel!
     var viewModel = CollectionViewModel()
+    
         override func viewDidLoad() {
             super.viewDidLoad()
+            setNavBar()
+            Collection.isHidden = true
             viewModel.get()
             viewModel.getUserPhoto()
             viewModel.getUserName()
             Collection.dataSource = self
             viewModel.notifyCompletion = { [weak self] in
+                if self?.viewModel.data.isEmpty == false {
                 DispatchQueue.main.async {
+                    self?.prompt.isHidden = true
+                    self?.Collection.isHidden = false
                     self?.Collection.reloadData()
                 }
             }
+                else {
+                    DispatchQueue.main.async {
+                        self?.prompt.isHidden = false
+                        self?.Collection.isHidden = true
+                        self?.Collection.reloadData()
+                    
+                    }
+                    
+                }
+                    
+        }
         }
         
         override func viewWillAppear(_ animated: Bool) {
@@ -56,7 +74,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
         func didTapRemoveBtn(with index: Int) {
             self.viewModel.delete(index: index)
             viewModel.completion = {
-                self.Collection.reloadData()
+                self.viewModel.get()
                 }
             }
         }

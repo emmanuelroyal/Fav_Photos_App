@@ -6,19 +6,25 @@
 //
 
 import UIKit
+import ShimmerSwift
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var skip: UIButton!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
     private let viewModel = OnboardingViewModel()
+    private let viewModelss = AlamofireReq()
+    
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad()        
         collectionView.dataSource = self
         setNavBar()
+        viewModelss.completion = {
+            print(self.viewModelss.networkData)
+        }
         pageControl.numberOfPages = viewModel.slides.count
         viewModel.updateButton = { [weak self] title, currentPage, btnTitle in
             self?.pageControl.currentPage = currentPage

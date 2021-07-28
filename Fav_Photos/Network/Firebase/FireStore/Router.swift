@@ -22,8 +22,8 @@ class Router<T: FirestoreRequest>: FireBaseRouter {
             return update(request, documentData: data, completion: completion)
         case .read :
             return read(request, completion: completion)
-        case .delete :
-            return delete(request, completion: completion)
+        case .delete(let type) :
+            return delete(request, type: type, completion: completion)
         case .qread(let type) :
             return qread(request, type: type, completion: completion)
         }
@@ -60,8 +60,8 @@ class Router<T: FirestoreRequest>: FireBaseRouter {
         }
     }
     
-    private func delete (_ request: FirestoreRequest, completion: @escaping NetworkRouterCompletion) {
-        request.documentReference?.delete { ( error) in
+    private func delete (_ request: FirestoreRequest, type: String, completion: @escaping NetworkRouterCompletion) {
+        request.documentReference?.delete() {( error) in
             if let error = error {
                 completion(.failure(error))
             } else {

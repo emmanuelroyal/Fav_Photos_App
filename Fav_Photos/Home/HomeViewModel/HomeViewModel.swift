@@ -10,7 +10,7 @@ import FirebaseAuth
 import FirebaseFirestore
 
 class CollectionViewModel {
-var data = [HomeModel]()
+    var data = [HomeModel]()
     
     var photo = ""
     var firstWord = ""
@@ -22,14 +22,25 @@ var data = [HomeModel]()
         greetings = gettime()
     }
     
-    
-    
-    
     var completion: (()-> Void)?
     
     func delete(index: Int) {
-        completion?()
+        let selected = data[index].imageId
+        let delete = HomeImagesService()
+        delete.deleteImage(type: selected) {(result) in
+            print(selected)
+            switch result {
+            case .failure(let error):
+                debugPrint(error)
+            case .success(_):
+                debugPrint("deleted")
+            }
+            self.completion?()
+        }
+        
     }
+    
+    
     func getUserName() {
         let docId = Auth.auth().currentUser?.uid
         let docRef = Firestore.firestore().collection("/users").document("\(docId!)")
@@ -76,7 +87,7 @@ var data = [HomeModel]()
         }
     }
     
-   
+    
     
     func get() {
         self.data.removeAll()
@@ -88,8 +99,8 @@ var data = [HomeModel]()
             case .success(let result):
                 result?.documents.forEach({ (doc) in
                     let data = doc.data()
-                    if let image = data["imageUrl"] as? String, let date = data["date"] as? String{
-                        let image = HomeModel(name: "Memory", image: image, date: date)
+                    if let image = data["imageUrl"] as? String, let date = data["date"] as? String {
+                        let image = HomeModel(name: "Memory \(self.data.count + 1)", image: image, date: date, imageId: doc.documentID)
                         self.data.append(image)
                     }
                 })
