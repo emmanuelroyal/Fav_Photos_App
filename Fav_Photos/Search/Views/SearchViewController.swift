@@ -10,9 +10,10 @@ import UIKit
 class SearchViewController: UIViewController, UICollectionViewDataSource {
     
     
+    @IBOutlet weak var prompt: UILabel!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var collection: UICollectionView!
-    
+    var searchText = ""
     var viewModel = SearchViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,12 +22,22 @@ class SearchViewController: UIViewController, UICollectionViewDataSource {
         viewModel.get()
         viewModel.notifyCompletion = { [weak self] in
             DispatchQueue.main.async { [self] in
+                if self?.viewModel.filteredData.isEmpty == true {
+                    self?.prompt.isHidden = false
+                    self?.prompt.text = "there are no images with the keyword ' \(String(describing: self!.searchText))'"
+                    self?.collection.isHidden = true
+                }
+                else {
+                    self?.prompt.isHidden = true
+                self?.collection.isHidden = false
                 self?.collection.reloadData()
             }
         }
 
         
     }
+}
+    
     override func viewWillAppear(_ animated: Bool) {
             DispatchQueue.main.async {
                 self.collection.reloadData()
@@ -57,6 +68,8 @@ extension SearchViewController: collectionViewCellDelegate {
     }
 extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.searchText = ""
+        self.searchText = searchText
         viewModel.filterBySearchtext(searchText: searchText)
     }
 

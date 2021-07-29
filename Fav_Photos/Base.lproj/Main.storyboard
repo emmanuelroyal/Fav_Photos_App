@@ -1535,12 +1535,24 @@
                                                     </view>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="51" id="gUi-YD-d5W"/>
+                                                </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mJ6-2R-6wh">
                                                 <rect key="frame" x="20" y="59" width="314" height="548"/>
                                                 <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egh-Gr-Cu1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="314" height="100"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="100" id="0VS-tq-XGb"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="U0g-53-yYH">
-                                                        <rect key="frame" x="0.0" y="0.0" width="314" height="548"/>
+                                                        <rect key="frame" x="0.0" y="100" width="314" height="448"/>
                                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dr6-Os-etp">
                                                             <size key="itemSize" width="331" height="315"/>
@@ -1635,12 +1647,15 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="dH0-RM-EYc" secondAttribute="trailing" constant="8" id="AMs-Vt-kZh"/>
+                                            <constraint firstAttribute="trailing" secondItem="dH0-RM-EYc" secondAttribute="trailing" constant="8" id="BAh-yD-PYB"/>
                                             <constraint firstItem="dH0-RM-EYc" firstAttribute="leading" secondItem="rCW-Hc-8rO" secondAttribute="leading" constant="8" id="BgF-YZ-xXA"/>
+                                            <constraint firstItem="dH0-RM-EYc" firstAttribute="leading" secondItem="rCW-Hc-8rO" secondAttribute="leading" constant="8" id="K06-dz-ZkW"/>
                                             <constraint firstItem="dH0-RM-EYc" firstAttribute="top" secondItem="rCW-Hc-8rO" secondAttribute="top" constant="8" id="TSJ-V9-WjK"/>
                                             <constraint firstItem="mJ6-2R-6wh" firstAttribute="top" secondItem="dH0-RM-EYc" secondAttribute="bottom" id="dbL-0m-fJX"/>
                                             <constraint firstItem="mJ6-2R-6wh" firstAttribute="leading" secondItem="rCW-Hc-8rO" secondAttribute="leading" constant="20" id="ep5-kN-2tx"/>
                                             <constraint firstAttribute="bottom" secondItem="mJ6-2R-6wh" secondAttribute="bottom" constant="20" id="ou4-H3-sAe"/>
                                             <constraint firstAttribute="trailing" secondItem="mJ6-2R-6wh" secondAttribute="trailing" constant="20" id="pi2-Wi-xA2"/>
+                                            <constraint firstItem="dH0-RM-EYc" firstAttribute="top" secondItem="rCW-Hc-8rO" secondAttribute="top" constant="8" id="ta7-2g-OHb"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1662,6 +1677,7 @@
                     <tabBarItem key="tabBarItem" title="" image="magnifyingglass" catalog="system" id="LXG-Th-VN3"/>
                     <connections>
                         <outlet property="collection" destination="U0g-53-yYH" id="y8t-mK-Qe1"/>
+                        <outlet property="prompt" destination="egh-Gr-Cu1" id="mV5-Yx-L6f"/>
                         <outlet property="searchBar" destination="eW4-Bo-M8h" id="ozF-Bl-ZXh"/>
                     </connections>
                 </viewController>
