@@ -22,11 +22,15 @@ class RecoverPasswordViewController: UIViewController {
         Auth.auth().sendPasswordReset(withEmail: emailTextField.text!) { error in
             if error != nil {
                 debugPrint(error?.localizedDescription as Any)
+               
             }
         }
     }
+        navigationController?.popViewController(animated: true)
     
-    
-
 }
+    
+    @IBAction func backPressed(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
 }
