@@ -24,7 +24,8 @@ class SearchViewController: UIViewController, UICollectionViewDataSource {
             DispatchQueue.main.async { [self] in
                 if self?.viewModel.filteredData.isEmpty == true {
                     self?.prompt.isHidden = false
-                    self?.prompt.text = "there are no images with the keyword ' \(String(describing: self!.searchText))'"
+                    self?.prompt.text = "There are no images with the keyword ' \(String(describing: self!.searchText))'"
+                    self?.prompt.textColor = .systemIndigo
                     self?.collection.isHidden = true
                 }
                 else {
