@@ -31,5 +31,12 @@ class NewPasswordViewController: UIViewController {
         else {
             AlertController.showAlert(self, title: "Error", message: "Both passwords do not match try again")
         }
+        navigationController?.popViewController(animated: true)
 }
+    
+    @IBAction func backPressed(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    
 }
