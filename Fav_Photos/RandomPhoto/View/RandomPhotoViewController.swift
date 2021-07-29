@@ -26,8 +26,16 @@ class RandomPhotoViewController: UIViewController, UICollectionViewDataSource, U
         viewModelss.completion = {
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
-                self.prompt.isHidden = true
-                self.Search.prompt = "swipe left to see more images"
+                if self.viewModelss.networkData.isEmpty == true {
+                self.prompt.isHidden = false
+                self.Search.prompt = "there were no images with that search word"
+                    self.prompt.text = "Oops"
+                }
+                else {
+                    self.prompt.isHidden = true
+                    self.Search.prompt = "swipe left to see more images"
+                }
+                
             }
         }
     }
@@ -63,7 +71,8 @@ extension RandomPhotoViewController : UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         if searchText != "" {
-            viewModelss.getMethod(search: searchText)
+            let search = searchText.filter {!$0.isWhitespace}
+            viewModelss.getMethod(search: search)
         }
     }
 }
