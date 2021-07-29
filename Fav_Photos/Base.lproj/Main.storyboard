@@ -1106,6 +1106,14 @@
                                                         <state key="normal" title="Recover Password">
                                                             <color key="titleColor" systemColor="systemBackgroundColor"/>
                                                         </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="recoverPressed:" destination="ATM-LY-bpf" eventType="touchUpInside" id="yEP-4d-ss5"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -1126,6 +1134,11 @@
                                             <constraint firstItem="WAL-8k-dY1" firstAttribute="leading" secondItem="1RO-I0-Hpn" secondAttribute="leading" constant="15" id="wre-lg-O0C"/>
                                             <constraint firstItem="WAL-8k-dY1" firstAttribute="top" secondItem="1RO-I0-Hpn" secondAttribute="top" constant="41" id="y49-fq-gNB"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
                             </stackView>
@@ -1148,6 +1161,9 @@
                             <constraint firstItem="LyZ-kd-4yb" firstAttribute="top" secondItem="RY4-UD-YfO" secondAttribute="top" constant="30" id="ywE-2e-udW"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="WAL-8k-dY1" id="95N-Xo-B9M"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H5l-c0-eab" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
