@@ -19,7 +19,6 @@ class SearchViewController: UIViewController, UICollectionViewDataSource {
         super.viewDidLoad()
         setNavBar()
         searchBar.delegate = self
-        viewModel.get()
         viewModel.notifyCompletion = { [weak self] in
             DispatchQueue.main.async { [self] in
                 if self?.viewModel.filteredData.isEmpty == true {
@@ -69,6 +68,7 @@ extension SearchViewController: collectionViewCellDelegate {
     }
 extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel.get()
         self.searchText = ""
         self.searchText = searchText
         viewModel.filterBySearchtext(searchText: searchText)
